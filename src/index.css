@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overscroll-behavior: none;
+  }
+
+  #root { height: 100%; }
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(240, 140, 101, 0.25);
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(240, 140, 101, 0.20);
+}
+
+/* ─── Glass Utilities ───────────────────────────────────────────────── */
+/* Light: Tier 2 glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.80);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 1px rgba(240, 140, 101, 0.06);
+}
+
+.glass-card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.07),
+              inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+/* Dark: Black 60% opaque glass card */
+.glass-card-dark {
+  background: rgba(0, 0, 0, 0.60);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.50),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-card-dark:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.60),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Dark code sub-surface */
+.code-surface-dark {
+  background: rgba(9, 13, 21, 0.80);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.40);
+}
+
+/* Light code sub-surface */
+.code-surface-light {
+  background: rgba(255, 255, 255, 0.80);
+  border: 1px solid rgba(219, 193, 184, 0.55);
+  box-shadow: inset 0 1px 3px rgba(45, 38, 34, 0.04);
+}
+
+/* ─── Floating Nav Pill ─────────────────────────────────────────────── */
+.nav-pill {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.40);
+}
+
+.nav-pill-light {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.80);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* ─── Gradient Button ───────────────────────────────────────────────── */
+.btn-primary {
+  background: linear-gradient(135deg, #e77953 0%, #d66a45 100%);
+  box-shadow: 0 4px 20px rgba(231, 121, 83, 0.32);
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #df704a 0%, #cb603b 100%);
+  box-shadow: 0 8px 24px rgba(231, 121, 83, 0.40);
+}
+.btn-primary:active { transform: scale(0.98); }
+
+/* Dark mode gradient button */
+.btn-primary-dark {
+  background: linear-gradient(135deg, #e07240 0%, #f08c65 50%, #e07240 100%);
+  box-shadow: 0 4px 20px rgba(224, 104, 64, 0.42), 0 0 12px rgba(240, 140, 101, 0.25);
+}
+.btn-primary-dark:hover {
+  box-shadow: 0 0 20px rgba(240, 140, 101, 0.55);
+}
+.btn-primary-dark:active { transform: scale(0.98); }
+
+/* ─── Input ─────────────────────────────────────────────────────────── */
+.glass-input {
+  background: rgba(255, 255, 255, 0.70);
+  border: 1px solid rgba(219, 193, 184, 0.60);
+  transition: all 0.2s ease;
+}
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #f08c65;
+  box-shadow: 0 0 0 3px rgba(240, 140, 101, 0.15);
+  outline: none;
+}
+
+/* ─── Selection ─────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(240, 140, 101, 0.25);
+  color: #6b2606;
+}
+.dark ::selection {
+  background: rgba(240, 140, 101, 0.30);
+  color: #ffd8c7;
+}
