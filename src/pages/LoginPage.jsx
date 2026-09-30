@@ -117,7 +117,7 @@ export default function LoginPage({ onLogin }) {
 
           {/* Footer quote */}
           <p className="text-xs mt-2" style={{ color: '#A3968C', letterSpacing: '0.04em', fontFamily: 'JetBrains Mono, monospace' }}>
-            Built at VIT Bhopal · Shyamak Sharma · 25BAI10739
+            VIT Bhopal · Python · Rust · Type Script · Go · C++
           </p>
         </div>
 
